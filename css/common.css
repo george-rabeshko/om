@@ -1,0 +1,57 @@
+/* font adding */
+@font-face {
+  font-family: Bolero;
+  src: local(Bolero), url(font/bolero.ttf);
+}
+
+@font-face {
+  font-family: 'Web Serveroff';
+  src: local('Web Serveroff'), url(font/web-serveroff.otf);
+}
+
+/* general styles */
+body {
+  background: url(img/bg-strings.png) repeat rgb(240, 239, 234);
+  color: rgb(82, 82, 82);
+  font: 13px/22px Arial, Helvetica, sans-serif;
+}
+
+#header, #footer, #page { margin: 0 auto; width: 1200px; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(42, 42, 42);
+  font-family: 'Web Serveroff', sans-serif;
+  text-transform: uppercase;
+}
+
+h1 { font-size: 70px; line-height: 70px; }
+h2 { font-size: 45px; line-height: 45px; margin: 0 0 15px 0; }
+h3 { font-size: 35px; line-height: 35px; margin: 0 0 20px 0; }
+h4 { font-size: 25px; line-height: 25px; }
+h5 { font-size: 20px; line-height: 20px; }
+h6 { font: bold 13px/22px Arial, Helvetica, sans-serif; text-transform: none; }
+h6 > span { font-weight: 0; }
+
+a { color: rgb(42,42,42); text-decoration: none; }
+a:hover { color: rgb(42,42,42); text-decoration: underline; }
+
+p { margin: 5px 0 15px; }
+
+input, label { display: block; }
+
+table tr td {
+  vertical-align: top;
+}
+
+.page-switcher:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.pagination {
+  font-size: 13px !important;
+}
+
+.active-category {
+  color: rgb(174,160,116) !important;
+  font-weight: bold;
+}
