@@ -10,19 +10,12 @@
     function __construct()
     {
       parent::__construct();
-
-      // Закриваємо неавторизований доступ до сторінки
-    	#$this->need_login = true;
     }
 
     // Віртуальний обробник запиту. Задає інформацію для шаблона
     protected function onInput()
     {
       parent::onInput();
-
-      // Менеджери
-      #$users = Users::instance();
-      #$db = Database::instance();
 
       $a = Articles::instance();
       $this->title = '';

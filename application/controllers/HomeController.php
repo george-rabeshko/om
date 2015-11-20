@@ -20,10 +20,6 @@
     {
       parent::onInput();
 
-      // Менеджери
-      #$users = Users::instance();
-      #$db = Database::instance();
-
       $a = Articles::instance();
       $this->title = 'Наше життя - любомльська районна газета';
       $this->articles = $a->getAllArticles();
