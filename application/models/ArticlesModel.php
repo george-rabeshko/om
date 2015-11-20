@@ -34,9 +34,18 @@
     // Отримання списку категорій
     public function getCertainArticles($category_uri)
     {
+      // $sql = "SELECT id FROM categories WHERE uri = :category_uri";
+      // $s = $this->dbh->prepare($sql);
+      // $s->bindValue(':category_uri', $category_uri);
+      // $s->execute();
+      //
+      // while ($row = $s->fetch(PDO::FETCH_ASSOC)) $data[] = $row;
+      //
+      // print_r($data);
+
       $sql = "SELECT id FROM categories WHERE uri = :category_uri";
       $tmp_params = array(':category_uri' => $category_uri);
-      $category_id = $this->dbh->select($sql);
+      $category_id = $this->dbh->select($sql, $tmp_params);
 
       $sql = "SELECT * FROM articles WHERE category = $category_id";
       return $this->dbh->select($sql);

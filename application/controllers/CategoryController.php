@@ -30,7 +30,8 @@
     protected function onOutput()
     {
       $data = array('articles' => $this->articles);
-      $this->content = $this->setTemplate('application/views/CategoryView.php', $data);
+      $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
+      
       parent::onOutput();
     }
   }

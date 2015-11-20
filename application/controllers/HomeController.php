@@ -29,6 +29,7 @@
 
       $data = array('articles' => $a->getAllArticles());
       $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
+      
       parent::onOutput();
     }
   }
