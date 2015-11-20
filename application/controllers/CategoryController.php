@@ -17,8 +17,10 @@
     {
       parent::onInput();
 
+      // Підключаємо необхідні компоненти
       $a = Articles::instance();
-      $this->title = '';
+
+      $this->title = 'Категорії';
       $this->articles = (isset($_GET['n']))
         ? $a->getCertainArticles($_GET['n'])
         : $a->getAllArticles();

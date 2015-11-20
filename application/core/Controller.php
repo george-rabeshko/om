@@ -45,12 +45,10 @@
     // Генерація HTML-шаблону в змінну
     protected function setTemplate($path, $data = array())
     {
-      # установка змінних для шаблона
       foreach ($data as $key => $value) {
         $$key = $value;
       }
 
-      # генерація HTML в змінну
       ob_start();
         include $path;
       return ob_get_clean();

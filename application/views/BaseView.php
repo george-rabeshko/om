@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="css/reset.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">

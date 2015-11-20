@@ -4,15 +4,13 @@
    */
   class Home extends Base
   {
-    protected $articles;
-
     // Конструктор
     function __construct()
     {
       parent::__construct();
 
       // Закриваємо неавторизований доступ до сторінки
-    	#$this->need_login = true;
+    	# $this->need_login = true;
     }
 
     // Віртуальний обробник запиту. Задає інформацію для шаблона
@@ -20,16 +18,17 @@
     {
       parent::onInput();
 
-      $a = Articles::instance();
       $this->title = 'Наше життя - любомльська районна газета';
-      $this->articles = $a->getAllArticles();
     }
 
     // Віртуальний генератор HTML
     protected function onOutput()
     {
-      $data = array('articles' => $this->articles);
-      $this->content = $this->setTemplate('application/views/CategoryView.php', $data);
+      // Підключаємо необхідні компоненти
+      $a = Articles::instance();
+
+      $data = array('articles' => $a->getAllArticles());
+      $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
       parent::onOutput();
     }
   }

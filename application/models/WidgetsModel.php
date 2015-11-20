@@ -25,9 +25,9 @@
   	}
 
     // Отримання списку категорій
-    public function getCategories()
+    public function getNavigation($table_name)
     {
-      $sql = 'SELECT * FROM categories';
+      $sql = 'SELECT * FROM ' . $table_name;
       return $this->dbh->select($sql);
     }
   }
