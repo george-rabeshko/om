@@ -21,8 +21,8 @@
       $a = Articles::instance();
 
       $this->title = 'Категорії';
-      $this->articles = (isset($_GET['n']))
-        ? $a->getCertainArticles($_GET['n'])
+      $this->articles = (isset($_GET['id']))
+        ? $a->getCertainArticles($_GET['id'])
         : $a->getAllArticles();
     }
 
@@ -31,7 +31,7 @@
     {
       $data = array('articles' => $this->articles);
       $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
-      
+
       parent::onOutput();
     }
   }
