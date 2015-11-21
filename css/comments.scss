@@ -55,13 +55,17 @@ $input-border: #8A8A8A;
 
 .bold {
   color: $darkest-font-color;
-  font-weight: bold;
+  @extend .bold;
 }
 
 .date {
   font-size: .9em;
   font-style: italic;
   margin: 5px 0 0 0;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .comments {

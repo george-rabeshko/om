@@ -20,8 +20,19 @@
 
       // Підключаємо необхідні компоненти
       $a = Articles::instance();
+      $dbh = Database::instance();
 
       $this->title = 'Категорії';
+
+      if ($this->isPost()) {
+        $data = array(
+          'author' => $_POST['author'],
+          'content' => $_POST['text'],
+          'date' => date("Y-m-d"),
+          'postid' => $_GET['postid']
+        );
+        $dbh->insert('comments', $data);
+      }
 
       if (isset($_GET['postid']))
         $this->article = $a->getArticle($_GET['postid']);
@@ -35,7 +46,13 @@
     protected function onOutput()
     {
       if (!empty($this->article)) {
-        $data = array('article' => $this->article);
+        // Підключаємо необхідні компоненти
+        $a = Articles::instance();
+
+        $data = array(
+          'article' => $this->article,
+          'comments' => $a->getComments($_GET['postid'])
+        );
         $this->content = $this->setTemplate('application/views/SingleView.php', $data);
       } else {
         $data = array('articles' => $this->articles);

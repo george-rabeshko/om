@@ -44,4 +44,11 @@
       $sql = 'SELECT * FROM articles WHERE category = ' . $catid;
       return $this->dbh->select($sql);
     }
+
+    // Видобування статті з бази данних
+    public function getComments($postid)
+    {
+      $sql = 'SELECT * FROM comments WHERE postid = ' . $postid . ' ORDER BY id DESC';
+      return $this->dbh->select($sql);
+    }
   }
