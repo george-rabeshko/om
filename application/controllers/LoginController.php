@@ -43,6 +43,7 @@
       // Генерація контенту форми входу
       $data = array('login' => $this->login);
       $this->content = $this->setTemplate('application/views/LoginView.php', $data);
+      
       parent::OnOutput();
     }
   }

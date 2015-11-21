@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="css/reset.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">
@@ -42,8 +42,8 @@
             <h3>Категорії</h3>
             <ul>
               <?php foreach ($categories as $c): ?>
-              <li><a href="?c=category&n=<?=$c['uri']?>" <?=(strpos($_SERVER['REQUEST_URI'], $c['uri'])) ? 'class="active-category"' : ''; ?>><?=$c['name']?></a></li>
-              <?php endforeach; ?>
+              <li><a href="?c=category&catid=<?=$c['id']?>" <?=(strpos($_SERVER['REQUEST_URI'], '?c=category&catid='.$c['id'])) ? 'class="active-category"' : ''; ?>><?=$c['name']?></a></li>
+            <?php endforeach; ?>
             </ul>
           </div>
         </div>
