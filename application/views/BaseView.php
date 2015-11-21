@@ -42,7 +42,7 @@
             <h3>Категорії</h3>
             <ul>
               <?php foreach ($categories as $c): ?>
-              <li><a href="?c=category&id=<?=$c['id']?>" <?=(strpos($_SERVER['REQUEST_URI'], '?c=category&id='.$c['id'])) ? 'class="active-category"' : ''; ?>><?=$c['name']?></a></li>
+              <li><a href="?c=category&catid=<?=$c['id']?>" <?=(strpos($_SERVER['REQUEST_URI'], '?c=category&catid='.$c['id'])) ? 'class="active-category"' : ''; ?>><?=$c['name']?></a></li>
             <?php endforeach; ?>
             </ul>
           </div>

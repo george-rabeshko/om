@@ -24,7 +24,7 @@
       $this->users = Users::instance();
   	}
 
-    // Отримання списку категорій
+    // Видобування сторінки з бази данних
     public function getPage($id)
     {
       $sql = 'SELECT * FROM pages WHERE id = ' . $id;

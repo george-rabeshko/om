@@ -24,17 +24,24 @@
       $this->users = Users::instance();
   	}
 
-    // Отримання списку категорій
-    public function getAllArticles()
+    // Видобування статті з бази данних
+    public function getArticle($postid)
     {
-      $sql = 'SELECT * FROM articles';
+      $sql = 'SELECT * FROM articles WHERE id = ' . $postid;
       return $this->dbh->select($sql);
     }
 
     // Отримання списку категорій
-    public function getCertainArticles($id)
+    public function getAllArticles()
     {
-      $sql = 'SELECT * FROM articles WHERE category = ' . $id;
+      $sql = 'SELECT * FROM articles ORDER BY id DESC';
+      return $this->dbh->select($sql);
+    }
+
+    // Отримання списку категорій
+    public function getCertainArticles($catid)
+    {
+      $sql = 'SELECT * FROM articles WHERE category = ' . $catid;
       return $this->dbh->select($sql);
     }
   }
