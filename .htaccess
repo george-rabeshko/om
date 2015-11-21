@@ -3,14 +3,15 @@ php_flag magic_quotes_gpc 0
 php_flag magic_quotes_runtime 0
 
 # Turn on URL rewriting
+Options +FollowSymLinks
 RewriteEngine On
 
 # Installation directory
-RewriteBase /om/
+RewriteBase /
 
 # Allow any files or directories that exist to be displayed directly
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite all other URLs to index.php/URL
-RewriteRule .* index.php?c=$0
+RewriteRule ^.*$ index.php [NC,L]
