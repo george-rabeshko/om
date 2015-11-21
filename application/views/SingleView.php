@@ -3,3 +3,33 @@
   <img src="<?=(is_null($article['img'])) ? 'css/img/no-photo.png' : $a['img']?>" alt="" />
   <?=$article[0]['content']?>
 </div>
+
+<!-- <?php if (ALLOW_COMMENTS): ?> -->
+<div class="comments">
+  <h3>Коментарі</h3>
+
+  <div class="add-comment">
+    <h4>Додати новий</h4>
+
+    <form action="" method="post" class="comment-form">
+      <input type="text" name="name" value="" placeholder="Ім’я">
+      <textarea name="text" cols="30" rows="10" placeholder="Коментар"></textarea>
+      <input type="submit" class="submit button" value="Надіслати">
+    </form>
+  </div>
+
+  <div class="last-comments">
+    <h4>Останні додані</h4>
+
+    <?php if (empty($comments)): ?>
+    <p>Коментарі відсутні</p>
+    <?php else: foreach ($comments as $comment): ?>
+    <div class="comment">
+      <h6 class="bold"><?=$comment['author']?></h6>
+      <p class="date">(<?=$comment['date']?>)</p>
+      <p><?=$comment['content']?></p>
+    </div>
+    <?= endforeach; endif; ?>
+  </div>
+</div>
+<!-- <?php endif; ?> -->
