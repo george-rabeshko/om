@@ -5,7 +5,7 @@
 </div>
 
 <!-- <?php if (ALLOW_COMMENTS): ?> -->
-<div class="comments">
+<div id="comments" class="comments">
   <h3>Коментарі</h3>
 
   <div class="add-comment">
@@ -21,9 +21,15 @@
   <div class="last-comments">
     <h4>Останні додані</h4>
 
+    <?php if ($note): ?>
+    <div class="note">
+      <p class="bold"><?=$note?></p>
+    </div>
+    <?php endif; ?>
+
     <?php if (empty($comments)): ?>
     <p class="bold">Коментарі відсутні</p class="bold">
-    <?php else: foreach ($comments as $comment): ?>
+    <?php else: foreach ($comments as $comment): if (!$comment['show']) continue; ?>
     <div class="comment">
       <h6 class="bold"><?=$comment['author']?></h6>
       <p class="date">(<?=$comment['date']?>)</p>

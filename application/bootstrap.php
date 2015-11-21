@@ -14,7 +14,6 @@
   // Базові контролер, модель та вигляд для сайту
   require_once 'application/core/Controller.php';
   require_once 'application/core/Model.php';
-  require_once 'application/core/View.php';
 
   // Підключення моделей
   require_once 'application/models/DatabaseModel.php';

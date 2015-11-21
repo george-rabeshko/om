@@ -31,8 +31,14 @@
           'date' => date("Y-m-d"),
           'postid' => $_GET['postid']
         );
-        $dbh->insert('comments', $data);
+
+        if ($dbh->insert('comments', $data)) {
+          setcookie('note', 'Коментар буде додано після перевірки модератором.');
+          header('Location: #comments');
+        }
       }
+
+      if (isset($_COOKIE['note'])) setcookie('note', '');
 
       if (isset($_GET['postid']))
         $this->article = $a->getArticle($_GET['postid']);
@@ -51,7 +57,8 @@
 
         $data = array(
           'article' => $this->article,
-          'comments' => $a->getComments($_GET['postid'])
+          'comments' => $a->getComments($_GET['postid']),
+          'note' => (isset($_COOKIE['note'])) ? $_COOKIE['note'] : false
         );
         $this->content = $this->setTemplate('application/views/SingleView.php', $data);
       } else {

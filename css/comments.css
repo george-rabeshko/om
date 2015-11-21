@@ -1,5 +1,5 @@
 .comments {
-  margin-top: 35px; }
+  padding-top: 35px; }
   .comments * {
     box-sizing: border-box; }
   .comments h4 {
@@ -13,7 +13,7 @@
 
 .last-comments {
   border-left: 1px solid #c7c7c7;
-  min-height: 260px;
+  min-height: 300px;
   padding-left: 15px; }
 
 .comment {
@@ -43,6 +43,13 @@
 
 .bold {
   font-weight: bold; }
+
+.note {
+  background-color: #009d2c;
+  margin-bottom: 5px;
+  padding: 10px; }
+  .note * {
+    color: #fff !important; }
 
 .clear:before, .comments:before,
 .clear:after,
