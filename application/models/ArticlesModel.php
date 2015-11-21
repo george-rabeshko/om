@@ -34,7 +34,7 @@
     // Отримання списку категорій
     public function getAllArticles()
     {
-      $sql = 'SELECT * FROM articles ORDER BY id DESC';
+      $sql = 'SELECT id, title, substring(content, 1, 450) AS content, img, rating, date, category FROM articles ORDER BY id DESC';
       return $this->dbh->select($sql);
     }
 
@@ -48,7 +48,7 @@
     // Видобування статті з бази данних
     public function getComments($postid)
     {
-      $sql = 'SELECT * FROM comments WHERE postid = ' . $postid . ' ORDER BY id DESC';
+      $sql = 'SELECT * FROM comments WHERE postid = ' . $postid . ' AND `show` = 1 ORDER BY id DESC';
       return $this->dbh->select($sql);
     }
   }

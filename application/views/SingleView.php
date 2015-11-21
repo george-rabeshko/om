@@ -29,7 +29,7 @@
 
     <?php if (empty($comments)): ?>
     <p class="bold">Коментарі відсутні</p class="bold">
-    <?php else: foreach ($comments as $comment): if (!$comment['show']) continue; ?>
+    <?php else: foreach ($comments as $comment): ?>
     <div class="comment">
       <h6 class="bold"><?=$comment['author']?></h6>
       <p class="date">(<?=$comment['date']?>)</p>
