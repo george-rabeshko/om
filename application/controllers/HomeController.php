@@ -27,9 +27,13 @@
       // Підключаємо необхідні компоненти
       $a = Articles::instance();
 
-      $data = array('articles' => $a->getAllArticles());
+      $current_page = (isset($_GET['p'])) ? $_GET['p'] : 1;
+      $data = array(
+        'articles' => $a->getAllArticles($current_page),
+        'total' => $a->total
+      );
       $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
-      
+
       parent::onOutput();
     }
   }

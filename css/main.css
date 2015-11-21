@@ -64,6 +64,27 @@
 .note p, .error p {
   margin: 0; }
 
+.pstrnav span, .pstrnav a {
+  border: 1px solid #AEA074;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pstrnav span {
+  color: #AEA074;
+}
+
+.pstrnav a {
+  background-color: #AEA074;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pstrnav a:hover {
+  background-color: #BEB390;
+  border: 1px solid #BEB390;
+}
+
 /* page */
 #main-container .page-container {
   padding-bottom: 40px; }
