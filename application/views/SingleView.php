@@ -13,7 +13,7 @@
 
     <form action="" method="post" class="comment-form">
       <input type="text" name="author" value="" placeholder="Ім’я">
-      <textarea name="text" cols="30" rows="10" placeholder="Коментар"></textarea>
+      <textarea name="text" cols="30" rows="7" placeholder="Коментар"></textarea>
       <input type="submit" class="submit button" value="Надіслати">
     </form>
   </div>
@@ -31,9 +31,9 @@
     <p class="bold">Коментарі відсутні</p class="bold">
     <?php else: foreach ($comments as $comment): ?>
     <div class="comment">
-      <h6 class="bold"><?=$comment['author']?></h6>
+      <h6 class="bold"><?=strip_tags($comment['author'])?></h6>
       <p class="date">(<?=$comment['date']?>)</p>
-      <p><?=$comment['content']?></p>
+      <p><?=strip_tags($comment['content'])?></p>
     </div>
     <?php endforeach; endif; ?>
   </div>

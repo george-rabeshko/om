@@ -22,7 +22,8 @@
       $a = Articles::instance();
       $dbh = Database::instance();
 
-      $this->title = 'Категорії';
+      $category_name = $a->getCategoryName($_GET['catid']);
+      $this->title = $category_name[0]['name'] . ' - Наше життя';
 
       if ($this->isPost()) {
         $data = array(

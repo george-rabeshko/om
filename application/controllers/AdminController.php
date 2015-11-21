@@ -1,8 +1,8 @@
 <?php
   /**
-   * Контроллер сторінок
+   * Контроллер головнії сторінки
    */
-  class Page extends Base
+  class Admin extends Base
   {
     // Конструктор
     function __construct()
@@ -10,7 +10,7 @@
       parent::__construct();
 
       // Закриваємо неавторизований доступ до сторінки
-    	# $this->need_login = true;
+    	#$this->need_login = true;
     }
 
     // Віртуальний обробник запиту. Задає інформацію для шаблона
@@ -19,20 +19,16 @@
       parent::onInput();
 
       // Підключаємо необхідні компоненти
-      $p = Pages::instance();
+      $a = Articles::instance();
 
-      $page_name = $p->getPageName($_GET['id']);
-      $this->title = $page_name[0]['title'] . ' - Наше життя';
+      $this->title = 'Наше життя - любомльська районна газета';
     }
 
     // Віртуальний генератор HTML
     protected function onOutput()
     {
-      // Підключаємо необхідні компоненти
-      $p = Pages::instance();
-
-      $data = array('page' => $p->getPage($_GET['id']));
-      $this->content = $this->setTemplate('application/views/PageView.php', $data);
+      $data = array('' => '');
+      $this->content = $this->setTemplate('application/views/ArticlesView.php', $data);
 
       parent::onOutput();
     }

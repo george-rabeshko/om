@@ -47,6 +47,11 @@ $input-border: #8A8A8A;
     padding: 10px;
     width: 100%;
   }
+
+  textarea {
+    line-height: 1.5em;
+    resize: none;
+  }
 }
 
 .submit {

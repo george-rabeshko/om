@@ -106,8 +106,18 @@
   margin: 0 26px;
   width: 580px; }
 
-.categories ul {
-  list-style-image: url(img/pointer.png); }
+.content img {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.content .intro-img {
+  max-height: 350px;
+}
+
+.categories ul li {
+  list-style-image: url(img/pointer.png) !important; }
 
 .categories li {
   margin-left: 15px;

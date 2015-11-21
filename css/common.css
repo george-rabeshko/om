@@ -43,6 +43,11 @@ table tr td {
   vertical-align: top;
 }
 
+ul li {
+  list-style: circle;
+  margin-left: 15px;
+}
+
 .page-switcher:not(:last-of-type) {
   margin-right: 5px;
 }
